@@ -1,0 +1,8 @@
+server:
+  port : 8085
+
+elasticsearch:
+  host: localhost
+  port: 9200
+  port1: 9201
+  protocol: http
