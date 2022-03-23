@@ -23,18 +23,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import lombok.RequiredArgsConstructor;
 import rafael.alcocer.caldera.spring.boot.elasticsearch.model.Data;
 import rafael.alcocer.caldera.spring.boot.elasticsearch.service.ElasticsearchService;
 
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/elasticsearch")
 public class ElasticsearchController {
 
     private final ElasticsearchService elasticsearchService;
-
-    public ElasticsearchController(ElasticsearchService elasticsearchService) {
-        this.elasticsearchService = elasticsearchService;
-    }
 
     @PostMapping("/index")
     @ResponseBody
