@@ -26,14 +26,13 @@ import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.common.xcontent.XContentType;
 import org.springframework.stereotype.Service;
 
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
 @Service
 public class ElasticsearchServiceImpl implements ElasticsearchService {
 
     private final RestHighLevelClient restHighLevelClient;
-
-    public ElasticsearchServiceImpl(RestHighLevelClient restHighLevelClient) {
-        this.restHighLevelClient = restHighLevelClient;
-    }
 
     @Override
     public String index(String index, String id, String jsonString) {

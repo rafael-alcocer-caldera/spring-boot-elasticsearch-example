@@ -22,6 +22,11 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 @Configuration
 @ConfigurationProperties("elasticsearch")
 public class ElasticsearchConfiguration {
@@ -37,37 +42,5 @@ public class ElasticsearchConfiguration {
                 RestClient.builder(
                         new HttpHost(getHost(), getPort(), getProtocol()),
                         new HttpHost(getHost(), getPort1(), getProtocol())));
-    }
-
-    public String getHost() {
-        return host;
-    }
-
-    public void setHost(String host) {
-        this.host = host;
-    }
-
-    public int getPort() {
-        return port;
-    }
-
-    public void setPort(int port) {
-        this.port = port;
-    }
-
-    public int getPort1() {
-        return port1;
-    }
-
-    public void setPort1(int port1) {
-        this.port1 = port1;
-    }
-
-    public String getProtocol() {
-        return protocol;
-    }
-
-    public void setProtocol(String protocol) {
-        this.protocol = protocol;
     }
 }
